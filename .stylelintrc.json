@@ -1,0 +1,17 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-config-standard-scss", "stylelint-prettier"],
+  "rules": {
+    "selector-pseudo-element-no-unknown": [
+      true,
+      {
+        "ignorePseudoElements": ["ng-deep"]
+      }
+    ],
+    "selector-no-vendor-prefix": [
+      true,
+      {
+        "ignoreSelectors": ["::-webkit-input-placeholder"]
+      }
+    ]
+  }
+}
