@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="wrapper">
+    <h2 class="title">
+      @if (variant === 'Login') {
+        Войдите в свой аккаунт
+      } @else {
+        Создать аккаунт
+      }
+    </h2>
+    <form class="form" [formGroup]="authForm" (ngSubmit)="submit()">
+      @if (variant === 'Register') {
+        <input class="form-input" placeholder="Имя" type="text" pInputText formControlName="name" />
+        @if (!f['name'].valid && f['name'].dirty) {
+          <span class="form-error">Введите имя</span>
+        }
+      }
+      <input class="form-input" placeholder="Почта" type="email" pInputText formControlName="email" />
+      @if (!f['email'].valid && f['email'].dirty) {
+        <span class="form-error">Введите email адрес</span>
+      }
+      <input class="form-input" placeholder="Пароль" type="password" pInputText formControlName="password" />
+      @if (!f['password'].valid && f['password'].dirty) {
+        <span class="form-error">Введите пароль</span>
+      }
+      <button pButton [disabled]="!authForm.valid" class="form-button" severity="primary" type="submit">
+        @if (variant === 'Login') {
+          Войти
+        } @else {
+          Регистрация
+        }
+      </button>
+    </form>
+
+    <div class="social">
+      <div class="social-span">
+        <div class="line-wrapper">
+          <div class="line"></div>
+        </div>
+        <div class="social-span-text">
+          <span>Или продолжить с </span>
+        </div>
+      </div>
+
+      <div class="social-buttons">
+        <app-social-button class="full-w" [handleClick]="handleGithubClick" [icon]="googleIcon"></app-social-button>
+        <app-social-button class="full-w" [handleClick]="handleGoogleClick" [icon]="gitHubIcon"></app-social-button>
+      </div>
+    </div>
+
+    <div class="toggle">
+      <div>
+        {{ variant === 'Login' ? 'У вас нет аккаунта?' : 'Уже есть аккаунт?' }}
+      </div>
+      <button class="toggle-button" (click)="toggleVariant()">
+        {{ variant === 'Login' ? 'Завести аккаунт' : 'Логин' }}
+      </button>
+    </div>
+  </div>
+</div>

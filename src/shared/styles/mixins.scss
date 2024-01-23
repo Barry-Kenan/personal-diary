@@ -1,0 +1,17 @@
+@mixin font($size, $height, $weight: 500) {
+  font-weight: $weight;
+  font-size: $size + px;
+  line-height: $height + px;
+}
+
+@mixin w640 {
+  @media (width > 640px) {
+    @content;
+  }
+}
+
+@mixin w1024 {
+  @media (width > 1024px) {
+    @content;
+  }
+}
