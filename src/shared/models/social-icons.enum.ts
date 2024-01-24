@@ -1,4 +1,4 @@
 export enum SocialIconsEnum {
-  'Google' = 'pi pi-google',
-  'Github' = 'pi pi-github',
+  GOOGLE = 'pi pi-google',
+  GITHUB = 'pi pi-github',
 }

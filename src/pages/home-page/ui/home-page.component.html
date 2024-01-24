@@ -1,1 +1,7 @@
-<p>home-page works!</p>
+<div class="wrapper">
+  home page
+  @if (authService.user$ | async; as user) {
+    <h1>Hello {{ user.displayName }}!</h1>
+  }
+  <p-button (click)="authService.logout()">Logout</p-button>
+</div>
