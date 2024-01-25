@@ -1,0 +1,28 @@
+@use '@styles' as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  min-height: 50px;
+  background-color: $gray;
+  color: $black;
+
+  .title {
+    margin: 0;
+    color: $primary;
+  }
+
+  .user {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    span {
+      text-transform: uppercase;
+
+      @include font(16, 18, 700);
+    }
+  }
+}

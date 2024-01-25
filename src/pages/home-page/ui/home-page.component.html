@@ -1,7 +1,7 @@
-<div class="wrapper">
+<app-layout>
   home page
   @if (authService.user$ | async; as user) {
     <h1>Hello {{ user.displayName }}!</h1>
   }
   <p-button (click)="authService.logout()">Logout</p-button>
-</div>
+</app-layout>

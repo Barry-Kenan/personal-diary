@@ -1,0 +1,15 @@
+<header class="header">
+  <h2 class="title">Personal Diary</h2>
+  @if (authService.user$ | async; as user) {
+    <div class="user">
+      <span class="pi pi-user"> {{ user.displayName }}</span>
+      <p-button
+        class="button"
+        (click)="authService.logout()"
+        severity="primary"
+        size="small"
+        icon="pi pi-sign-out"
+        title="logout"></p-button>
+    </div>
+  }
+</header>

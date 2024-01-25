@@ -1,13 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { SocialIconsEnum } from '@shared/models';
+import { AuthVariantEnum, SocialIconsEnum } from '@shared/models';
 import { AuthService } from '@shared/services';
 import { SocialButtonComponent } from '@shared/ui';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { MessagesModule } from 'primeng/messages';
-import { AuthVariantEnum } from './../../../shared/models/auth-variant.enum';
 @Component({
   selector: 'app-auth-form',
   standalone: true,

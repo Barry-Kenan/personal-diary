@@ -1,15 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { AuthService } from '@shared/services';
-import { LayoutComponent } from '@widgets';
 import { ButtonModule } from 'primeng/button';
 
 @Component({
-  selector: 'app-home-page',
+  selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, ButtonModule, LayoutComponent],
-  templateUrl: './home-page.component.html',
+  imports: [CommonModule, ButtonModule],
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss'],
 })
-export class HomePageComponent {
+export class HeaderComponent {
   constructor(public authService: AuthService) {}
 }

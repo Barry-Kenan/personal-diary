@@ -1,0 +1,13 @@
+@use '@styles' as *;
+
+.footer {
+  min-height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h5 {
+    margin: 0;
+    color: $gray-dark;
+  }
+}

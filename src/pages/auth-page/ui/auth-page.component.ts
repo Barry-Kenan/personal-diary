@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthFormComponent } from '@widgets/index';
+import { AuthFormComponent } from '@widgets';
 
 @Component({
   selector: 'app-auth-page',
