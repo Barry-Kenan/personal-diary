@@ -3,6 +3,9 @@ import { Component } from '@angular/core';
 import { AuthService } from '@shared/services';
 import { ButtonModule } from 'primeng/button';
 
+/**
+ * Компонент Header
+ */
 @Component({
   selector: 'app-header',
   standalone: true,

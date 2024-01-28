@@ -1,3 +1,6 @@
+/**
+ * Класс метаданных
+ */
 export class FileMetaData {
   public id: string = '';
 

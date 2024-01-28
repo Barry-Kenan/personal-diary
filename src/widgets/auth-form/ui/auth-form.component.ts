@@ -7,6 +7,10 @@ import { SocialButtonComponent } from '@shared/ui';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { MessagesModule } from 'primeng/messages';
+
+/**
+ * Форма авторизации, регистрации
+ */
 @Component({
   selector: 'app-auth-form',
   standalone: true,
@@ -36,6 +40,7 @@ export class AuthFormComponent {
     return this.authForm.controls;
   }
 
+  // метод переключения между авторизацией и регистрацией
   public toggleVariant = () => {
     if (this.variant === AuthVariantEnum.LOGIN) {
       this.f['name'].addValidators([Validators.required]);
@@ -63,10 +68,12 @@ export class AuthFormComponent {
     }
   }
 
+  // метод авторизации через Google
   public handleGoogleClick(): void {
     this.authService.googleLogin();
   }
 
+  // метод авторизации через Github
   public handleGithubClick(): void {
     this.authService.githubLogin();
   }

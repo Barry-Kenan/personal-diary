@@ -8,6 +8,9 @@ import edjsHTML from 'editorjs-html';
 import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 
+/**
+ * Компонент карточка записей
+ */
 @Component({
   selector: 'app-card',
   standalone: true,
@@ -34,6 +37,7 @@ export class CardComponent implements OnInit {
     }
   }
 
+  // метод удаления записи
   public delete(): void {
     this.notesService.deleteNote(this.note);
     this.messageService.add({

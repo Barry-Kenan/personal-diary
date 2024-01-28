@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { AuthFormComponent } from '@widgets';
 
+/**
+ * Страница авторизации
+ */
 @Component({
   selector: 'app-auth-page',
   standalone: true,

@@ -14,6 +14,9 @@ import { FileUploadHandlerEvent, FileUploadModule } from 'primeng/fileupload';
 import { InputTextModule } from 'primeng/inputtext';
 import { ProgressBarModule } from 'primeng/progressbar';
 
+/**
+ * Форма добавления, изменения записи
+ */
 @Component({
   selector: 'app-note-form',
   standalone: true,
@@ -81,6 +84,7 @@ export class NoteFormComponent implements OnInit, AfterViewInit {
     }
   }
 
+  // метод инициализации Editor.js
   private initializeEditor() {
     this.editor = new EditorJS({
       minHeight: 440,
@@ -98,6 +102,7 @@ export class NoteFormComponent implements OnInit, AfterViewInit {
     return this.noteForm.controls;
   }
 
+  // метод добавления файла в форму
   public saveFile(event: FileUploadHandlerEvent) {
     const file = event.files[0];
     this.noteForm.patchValue({
@@ -105,6 +110,7 @@ export class NoteFormComponent implements OnInit, AfterViewInit {
     });
   }
 
+  // метод добавления текстового файла editor.js в форму
   public saveText() {
     this.editor.save().then(data => {
       this.noteForm.patchValue({
@@ -128,6 +134,7 @@ export class NoteFormComponent implements OnInit, AfterViewInit {
     }
   }
 
+  // метод сохранения файла и текста в базе, с изменением процента загрузки файла
   private saveNoteWithFile(file: File, text: OutputData) {
     if (this.id) {
       this.notesService.deleteNote(this.initialData);
@@ -144,6 +151,7 @@ export class NoteFormComponent implements OnInit, AfterViewInit {
     });
   }
 
+  // метод уведомления и навигация в главную страницу
   private message(detail: string) {
     this.messageService.add({
       key: 'authToast',

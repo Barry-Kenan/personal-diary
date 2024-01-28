@@ -8,6 +8,10 @@ import { LayoutComponent } from '@widgets';
 import { ButtonModule } from 'primeng/button';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { firstValueFrom, map } from 'rxjs';
+
+/**
+ * Главная страница
+ */
 @Component({
   selector: 'app-home-page',
   standalone: true,
@@ -30,6 +34,7 @@ export class HomePageComponent implements OnInit {
     this.getAll();
   }
 
+  // метод получения всех записей
   private async getAll(): Promise<void> {
     this.loading = true;
     const userEmail = await firstValueFrom(this.authService.user$.pipe(map(e => e?.email)));

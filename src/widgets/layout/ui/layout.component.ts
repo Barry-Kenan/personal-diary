@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { FooterComponent, HeaderComponent } from '@features';
 
+/**
+ * компонент Layout
+ */
 @Component({
   selector: 'app-layout',
   standalone: true,

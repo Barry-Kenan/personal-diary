@@ -2,6 +2,9 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { LayoutComponent, NoteFormComponent } from '@widgets';
 
+/**
+ * Страница добавления новой записи
+ */
 @Component({
   selector: 'app-new-note-page',
   standalone: true,
