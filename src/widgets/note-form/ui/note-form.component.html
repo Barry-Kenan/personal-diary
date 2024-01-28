@@ -1,0 +1,33 @@
+<form class="form" [formGroup]="noteForm" (ngSubmit)="submit()">
+  <div class="file">
+    @if (initialData.photoUrl !== '#') {
+      <div class="image-container">
+        <img [src]="initialData.photoUrl" [alt]="initialData.photoName" class="image" />
+      </div>
+    }
+    <p-fileUpload
+      class="file-upload"
+      #fileUpload
+      mode="basic"
+      accept="image/*"
+      [auto]="true"
+      [chooseLabel]="f['file'].value.name ? f['file'].value.name : id ? 'Изменить изображение' : 'Добавить изображение'"
+      [disabled]="f['file'].value"
+      [customUpload]="true"
+      chooseIcon="-"
+      (uploadHandler)="saveFile($event)">
+    </p-fileUpload>
+  </div>
+
+  <div class="text">
+    <div class="editor" #editor></div>
+  </div>
+  @if (percentage) {
+    <p-progressBar [value]="percentage"></p-progressBar>
+  }
+
+  <div class="buttons">
+    <p-button type="submit" class="button" [disabled]="!noteForm.valid"> {{ id ? 'Изменить' : 'Добавить' }} </p-button>
+    <p-button type="button" severity="danger" class="button" routerLink="/home"> Отмена </p-button>
+  </div>
+</form>

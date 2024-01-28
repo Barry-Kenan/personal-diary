@@ -1,0 +1,60 @@
+@use '@styles' as *;
+
+.form {
+  width: 100%;
+  max-width: 500px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .file {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    .image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: $radius;
+      box-shadow: $box-shadow;
+      padding: 10px;
+      height: 100px;
+      aspect-ratio: 3/2;
+
+      .image {
+        width: 100%;
+        height: 100%;
+        border-radius: $radius;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .text {
+    .editor {
+      margin-top: 15px;
+      padding: 8px;
+      border: 2px solid $gray-dark;
+      border-radius: $radius;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+  }
+
+  label {
+    background-color: $primary;
+    border-radius: $radius;
+    padding: 8px;
+    color: $white;
+    box-shadow: $box-shadow;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+}
