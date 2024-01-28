@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Injectable } from '@angular/core';
 import { AuthProvider, GithubAuthProvider, GoogleAuthProvider } from '@angular/fire/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
@@ -26,7 +24,7 @@ export class AuthService {
           displayName: name,
         })
       )
-      .then(result => {
+      .then(() => {
         this.message('success', 'Успешная регистрация');
       })
       .catch(error => {
@@ -37,7 +35,7 @@ export class AuthService {
   public async login(email: string, password: string) {
     return await this.afAuth
       .signInWithEmailAndPassword(email, password)
-      .then(result => {
+      .then(() => {
         this.message('success', 'Успешная авторизация');
       })
       .catch(error => {
@@ -56,9 +54,9 @@ export class AuthService {
   public async authLogin(provider: AuthProvider) {
     return await this.afAuth
       .signInWithPopup(provider)
-      .then(result => {
+      .then(() => {
         this.message('success', 'Успешная авторизация');
-        this.router.navigate(['/']);
+        this.router.navigate(['']);
       })
       .catch(error => {
         this.message('error', error.message);

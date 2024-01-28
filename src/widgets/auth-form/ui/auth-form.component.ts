@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthVariantEnum, SocialIconsEnum } from '@shared/models';
 import { AuthService } from '@shared/services';
 import { SocialButtonComponent } from '@shared/ui';
@@ -10,15 +10,7 @@ import { MessagesModule } from 'primeng/messages';
 @Component({
   selector: 'app-auth-form',
   standalone: true,
-  imports: [
-    InputTextModule,
-    ButtonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MessagesModule,
-    SocialButtonComponent,
-    CommonModule,
-  ],
+  imports: [InputTextModule, ButtonModule, ReactiveFormsModule, MessagesModule, SocialButtonComponent, CommonModule],
   templateUrl: './auth-form.component.html',
   styleUrls: ['./auth-form.component.scss'],
 })
