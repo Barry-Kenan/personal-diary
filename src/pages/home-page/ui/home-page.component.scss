@@ -1,6 +1,9 @@
 .cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   margin-top: 10px;
-  height: calc(100% - 55px);
+  height: 100%;
 }
 
 .loading {
@@ -8,10 +11,4 @@
   justify-content: center;
   align-items: center;
   height: 100%;
-}
-
-:host ::ng-deep .cdk-virtual-scroll-content-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
 }

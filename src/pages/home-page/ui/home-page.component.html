@@ -6,8 +6,10 @@
   } @else {
     <p-button class="button" icon="pi pi-plus" title="Добавить" routerLink="/new-note"> </p-button>
 
-    <cdk-virtual-scroll-viewport class="cards" #scroller [itemSize]="260">
-      <app-card class="card" *cdkVirtualFor="let note of notes" [note]="note"></app-card>
-    </cdk-virtual-scroll-viewport>
+    <div class="cards">
+      @for (note of notes; track note.id) {
+        <app-card class="card" [note]="note"></app-card>
+      }
+    </div>
   }
 </app-layout>
