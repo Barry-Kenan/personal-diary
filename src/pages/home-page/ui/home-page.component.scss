@@ -1,0 +1,17 @@
+.cards {
+  margin-top: 10px;
+  height: calc(100% - 55px);
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+:host ::ng-deep .cdk-virtual-scroll-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}

@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="head">
+    <span class="created-date">
+      {{ note.changedDate | date: 'H:mm | d.MM.yyyy' }}
+    </span>
+    <div class="image-container">
+      <img class="img" [src]="note.photoUrl" [alt]="note.photoName" />
+    </div>
+  </div>
+  <div class="text" [innerHTML]="text"></div>
+  <div class="buttons">
+    <p-button class="button" icon="pi pi-file-edit" title="Изменить" routerLink="/edit-note/{{ note.id }}"> </p-button>
+    <p-button class="button" (click)="delete()" severity="danger" icon="pi pi-trash" title="Удалить"></p-button>
+  </div>
+</div>

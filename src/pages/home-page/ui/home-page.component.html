@@ -1,7 +1,13 @@
 <app-layout>
-  home page
-  @if (authService.user$ | async; as user) {
-    <h1>Hello {{ user.displayName }}!</h1>
+  @if (loading) {
+    <div class="loading">
+      <p-progressSpinner></p-progressSpinner>
+    </div>
+  } @else {
+    <p-button class="button" icon="pi pi-plus" title="Добавить" routerLink="/new-note"> </p-button>
+
+    <cdk-virtual-scroll-viewport class="cards" #scroller [itemSize]="260">
+      <app-card class="card" *cdkVirtualFor="let note of notes" [note]="note"></app-card>
+    </cdk-virtual-scroll-viewport>
   }
-  <p-button (click)="authService.logout()">Logout</p-button>
 </app-layout>

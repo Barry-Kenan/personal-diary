@@ -1,0 +1,55 @@
+@use '@styles' as *;
+
+.card {
+  border: 1px solid $gray;
+  border-radius: $radius;
+  box-shadow: $box-shadow;
+  padding: 16px;
+
+  .head {
+    display: flex;
+    justify-content: space-between;
+
+    .created-date {
+      background-color: $primary;
+      color: $white;
+      padding: 8px;
+      border-radius: $radius;
+      box-shadow: $box-shadow;
+      height: fit-content;
+
+      @include font(14, 18, 700);
+    }
+
+    .image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: $radius;
+      box-shadow: $box-shadow;
+      padding: 10px;
+      height: 100px;
+      aspect-ratio: 3/2;
+
+      .img {
+        width: 100%;
+        height: 100%;
+        border-radius: $radius;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: end;
+    border-top: 1px solid $gray;
+    padding: 10px;
+
+    .button {
+      box-shadow: $box-shadow;
+      border-radius: $radius;
+    }
+  }
+}
